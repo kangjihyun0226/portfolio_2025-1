@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jua&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --base: oklch(55% 0.2 266);
+  --base-transparent: oklch(55% 0.2 266 / 0.7);
+  --surface: oklch(97% 0.025 90);
+  --title-font: "Jua", serif;
+  --normal-font: "Roboto", sans-serif;
+}
+
+html,
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
+  background-color: var(--surface);
+  color: var(--base);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  pointer-events: none;
+}
+
+#video_1 {
+  aspect-ratio: 560/315;
+}
+
+header {
+  position: relative;
+  width: 100%;
+  top: 0;
+  height: max(10vh, 5rem);
+  border-bottom: 2px solid var(--base);
+}
+
+main {
+  position: relative;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--base);
+  color: var(--surface);
+}
+
+.section {
+  max-width: 1200px;
+  height: 100%;
+  margin-inline: auto;
+  padding-inline: 40px;
+}
+
+.container_nav {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: min-content;
+  justify-content: space-between;
+  align-items: baseline;
+  align-content: end;
+  gap: 60px;
+  height: 100%;
+  margin-top: auto;
+  padding-bottom: 12px;
+}
+.container_nav--logo {
+  font-size: 72px;
+  font-family: var(--title-font);
+  font-weight: 700;
+  line-height: 80%;
+}
+.container_nav--links {
+  display: flex;
+  gap: 12px 40px;
+  font-size: 28px;
+  font-family: var(--normal-font);
+  font-weight: 500;
+  line-height: 100%;
+  text-transform: uppercase;
+}
+.container_main {
+  width: 100%;
+  position: relative;
+  margin-bottom: 10px;
+}
+.container_main:hover .thumbnail {
+  filter: blur(2px);
+}
+.container_main:hover .overlay-1 {
+  opacity: 1;
+}
+.container_main--thumbnail {
+  width: 100%;
+  height: 100%;
+}
+.container_main--overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 24px;
+  align-items: baseline;
+  align-content: end;
+  color: var(--surface);
+}
+.container_main--overlay--title {
+  font-size: 42px;
+  font-family: var(--title-font);
+  line-height: 100%;
+}
+.container_main--overlay--date {
+  font-family: var(--title-font);
+  line-height: 100%;
+  font-size: 24px;
+  text-align: right;
+}
+.container_others {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.container_others--content {
+  width: 100%;
+  position: relative;
+}
+.container_others--content:hover .thumbnail {
+  filter: blur(2px);
+}
+.container_others--content:hover .overlay-2 {
+  opacity: 1;
+}
+.container_others--content--video {
+  width: 100%;
+  height: 100%;
+  margin-inline: 0;
+}
+.container_others--content--thumbnail {
+  width: 100%;
+  display: block;
+}
+.container_others--content--overlay {
+  position: absolute;
+  display: grid;
+  grid-template-rows: min-content min-content;
+  align-content: center;
+  text-align: center;
+  inset: 0;
+  color: var(--surface);
+  background-color: var(--base);
+  font-family: var(--title-font);
+}
+.container_others--content--overlay--title {
+  font-size: 28px;
+}
+.container_others--content--overlay--date {
+  font-size: 20px;
+}
+.container_bio {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  padding-block: 4px;
+}
+.container_bio--info--name {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 12px;
+  line-height: 100%;
+  padding: 2px;
+}
+.container_bio--info--email {
+  font-size: 16px;
+  line-height: 100%;
+  padding: 2px 12px 4px 12px;
+  margin-left: -12px;
+}
+.container_bio--info--email:hover {
+  background-color: var(--surface);
+  color: var(--base);
+  border-radius: 9999px;
+}
+.container_bio--links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.container_bio--links--link {
+  width: 36px;
+  height: 40px;
+}
+.container_bio--links--link img {
+  width: 100%;
+}
+
+.overlay-1 {
+  background: linear-gradient(to bottom, transparent 70%, var(--base) 100%);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.overlay-2 {
+  background-color: var(--base-transparent);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
